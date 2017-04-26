@@ -34,4 +34,4 @@ for source in DATA_SOURCES:
                     'text': text.strip()
                     }, ignore_index=True)
 
-df.to_csv(OUTPUT_FILE, sep='\t', header=False, index=False, quoting=csv.QUOTE_NONE)
+df.to_csv(OUTPUT_FILE, sep='\t', header=True, index=False, quoting=csv.QUOTE_NONE)
