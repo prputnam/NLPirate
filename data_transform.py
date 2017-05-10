@@ -2,10 +2,10 @@ import os
 import pandas as pd
 import csv
 
-DATA_SOURCES = [('NEGATIVE', 'FALSE', './data/negative_polarity/deceptive_from_MTurk'),
-                ('NEGATIVE', 'TRUE', './data/negative_polarity/truthful_from_Web'),
-                ('POSITIVE', 'FALSE', './data/positive_polarity/deceptive_from_MTurk'),
-                ('POSITIVE', 'TRUE', './data/positive_polarity/truthful_from_TripAdvisor')]
+DATA_SOURCES = [('NEGATIVE', 'DECEPTIVE', './data/negative_polarity/deceptive_from_MTurk'),
+                ('NEGATIVE', 'AUTHENTIC', './data/negative_polarity/truthful_from_Web'),
+                ('POSITIVE', 'DECEPTIVE', './data/positive_polarity/deceptive_from_MTurk'),
+                ('POSITIVE', 'AUTHENTIC', './data/positive_polarity/truthful_from_TripAdvisor')]
 
 OUTPUT_FILE = 'standardized_data.csv'
 
