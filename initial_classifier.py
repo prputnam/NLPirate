@@ -10,8 +10,6 @@ from sklearn.model_selection import KFold, cross_val_predict
 
 from pprint import pprint
 
-from extract_features import extract_features
-
 def _show_most_informative_features(vectorizer, clf, n=20):
     feature_names = vectorizer.get_feature_names()
     coefs_with_fns = sorted(zip(clf.coef_[0], feature_names))
