@@ -20,3 +20,5 @@ Included is a `data_transform.py` script to transform the data out of its folder
 ## Execution
 
 To run either of the classifiers, simply invoke them from the command line: `python final_classifier.py`. The classifiers will use the entirity of the dataset, making use of k-fold validation, and then report on their results at the end of classification, as well as the most useful features for the classification.
+
+Also included are two Python notebook files that make use of the visualization library [ELI5](https://github.com/TeamHG-Memex/eli5). Running these from Jupyter will allow for investigation into the classification of particular reviews, with highlisted features in the text, and feature weighting for the particular review.
