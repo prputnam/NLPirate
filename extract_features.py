@@ -14,7 +14,7 @@ def _count_possible_misspellings(d, words):
     return sum(not d.check(word.string) for word in words)
 
 
-def extract_features(texts, report=False):
+def extract_all_features(texts, report=False):
     d = enchant.Dict("en_US")
     features_list = []
 
@@ -46,5 +46,29 @@ def extract_features(texts, report=False):
             print("Features:")
             pprint(features)
 
+    return features_list;
+
+
+def extract_most_performant_features(texts, report=False):
+    d = enchant.Dict("en_US")
+    features_list = []
+
+    print("Starting feature extraction...")
+    for text in tqdm(texts):
+        features = {}
+
+        tb = TextBlob(text)
+        words = tb.words
+
+        features['count_personal_pronouns'] = sum(tag[1] == 'PRP' for tag in tb.tags)
+        features['count_misspellings'] = _count_possible_misspellings(d, words)
+
+        features_list.append(features)
+
+        if report:
+            print("\nText:")
+            print(text)
+            print("Features:")
+            pprint(features)
 
     return features_list;
